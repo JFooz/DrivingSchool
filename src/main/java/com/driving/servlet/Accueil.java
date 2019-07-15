@@ -31,6 +31,14 @@ public class Accueil extends HttpServlet {
 		Eleve eleve1 = new Eleve();
 		elevelist.add(new Eleve("J", "Fooz", 28));
 		elevelist.add(new Eleve("Cousin", "Tom", 28));
+		elevelist.add(new Eleve("J", "Fooz", 28));
+		elevelist.add(new Eleve("Cousin", "Tom", 28));
+		elevelist.add(new Eleve("J", "Fooz", 28));
+		elevelist.add(new Eleve("Cousin", "Tom", 28));
+		elevelist.add(new Eleve("J", "Fooz", 28));
+		elevelist.add(new Eleve("Cousin", "Tom", 28));
+		elevelist.add(new Eleve("J", "Fooz", 28));
+		elevelist.add(new Eleve("Cousin", "Tom", 28));
 		request.setAttribute("list", elevelist);
 
 
