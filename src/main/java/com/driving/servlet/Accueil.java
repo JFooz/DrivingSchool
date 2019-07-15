@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.driving.models.Eleve;
 
@@ -26,7 +27,8 @@ public class Accueil extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String msg = "Message depuis la servlet";
-		request.setAttribute("msg", msg);
+		HttpSession session = request.getSession(true);
+		session.setAttribute("msg", msg);
 		List<Eleve> elevelist = new ArrayList<>();
 		Eleve eleve1 = new Eleve();
 		elevelist.add(new Eleve("J", "Fooz", 28));
