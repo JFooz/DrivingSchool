@@ -39,7 +39,7 @@ public class Inscription extends HttpServlet {
 		Eleve eleve = new Eleve(nom, prenom, age);
 
 		HttpSession session = request.getSession(true);
-		request.setAttribute("eleve", eleve);
+		session.setAttribute("eleve", eleve);
 		response.sendRedirect(request.getContextPath() + "/accueil");
 		//this.getServletContext().getRequestDispatcher("/WEB-INF/confirmationInscription.jsp").forward(request, response);
 

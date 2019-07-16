@@ -26,11 +26,22 @@ public class Accueil extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String msg = "Message depuis la servlet";
-		HttpSession session = request.getSession(true);
-		session.setAttribute("msg", msg);
+
 		List<Eleve> elevelist = new ArrayList<>();
-		Eleve eleve1 = new Eleve();
+		HttpSession session = request.getSession();
+
+
+
+
+
+		if(session != null) {
+			Eleve eleve = (Eleve) session.getAttribute("eleve");
+			if(eleve != null) {
+				elevelist.add(eleve);
+			}
+		}
+
+
 		elevelist.add(new Eleve("J", "Fooz", 28));
 		elevelist.add(new Eleve("Cousin", "Tom", 28));
 		elevelist.add(new Eleve("J", "Fooz", 28));
@@ -42,6 +53,7 @@ public class Accueil extends HttpServlet {
 		elevelist.add(new Eleve("J", "Fooz", 28));
 		elevelist.add(new Eleve("Cousin", "Tom", 28));
 		request.setAttribute("list", elevelist);
+		System.out.println(elevelist);
 
 
 		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);

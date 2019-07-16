@@ -12,6 +12,7 @@
 				<li class="nav-item active"><a class="nav-link" href="<c:url value="/accueil" />"> Accueil<span class="sr-only">(current)</span></a></li>
 				<li class="nav-item"><a class="nav-link" href="<c:url value="/seances-code" />">Calendrier</a></li>
 				<li class="nav-item"><a class="nav-link" href="<c:url value="/inscription" />">Inscription</a></li>
+				<li class="nav-item"><a class="nav-link" href="<c:url value="/Logout" />"><button type="button" id="logout" class="btn btn-danger">Logout</button></a></li>
 			</ul>
 		</div>
 	</nav>
