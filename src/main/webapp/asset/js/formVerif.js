@@ -4,7 +4,8 @@ let inputAgeElmt = document.querySelector('#age');
 let nomHelper = document.querySelector('#nom-helper');
 let prenomHelper = document.querySelector('#prenom-helper');
 let buttonSubmitElmt = document.querySelector('#submit-inscription');
-let erreur = 
+let nomIsValid = false;
+let prenomIsValid = false;
 
 buttonSubmitElmt.setAttribute('disabled', '');
 
@@ -17,38 +18,50 @@ desactiverButton();
 inputNomElmt.addEventListener('input', (e)=> {
     if(e.target.value.trim().length > 5) {
     	nomHelper.textContent = 'le nom est trop long';
-    	desactiverButton()
+    	nomIsValid = false;
     }else if (e.target.value.trim().length < 2 && e.target.value.trim().length > 0) {
     	nomHelper.textContent = 'le nom est trop court';
-    	desactiverButton();
+    	nomIsValid = false;
     	
 	}else if (e.target.value.trim().length == 0) {
     	nomHelper.textContent = 'le champ est obligatoire';
-    	desactiverButton();
+    	nomIsValid = false;
 	}else {
+		nomIsValid = true;
 		nomHelper.textContent = '';
-		activerButton()
+		
 	}
+    checkValidForm();
 });
 
 
 inputPrenomElmt.addEventListener('input', (e)=> {
     if(e.target.value.trim().length > 5) {
     	prenomHelper.textContent = 'le prenom est trop long';
-    	desactiverButton()
+    	prenomIsValid = false;
     }else if (e.target.value.trim().length < 2 && e.target.value.trim().length > 0) {
     	prenomHelper.textContent = 'le prenom est trop court';
-    	desactiverButton();
+    	prenomIsValid = false;
     	
-	}else if (e.target.value.trim().length == 0) {
+	}else if (e.target.value.trim().length == 0) {		
 		prenomHelper.textContent = 'le champ est obligatoire';
-    	desactiverButton();
+    	prenomIsValid = false;
+    	
 	}else {
-		prenomHelper.textContent = '';
-		activerButton()
+		prenomIsValid = true;
+		prenomHelper.textContent = '';		
 	}
+    checkValidForm();
 });
 
+
+function checkValidForm() {
+	if(nomIsValid && prenomIsValid) {
+		activerButton();
+	}else {
+		desactiverButton();
+	}
+}
 
 
 function desactiverButton() {
