@@ -45,9 +45,9 @@ public class Accueil extends HttpServlet {
 		elevelist.add(new Eleve("J", "Fooz", 28));
 		elevelist.add(new Eleve("Cousin", "Tom", 28));
 		elevelist.add(new Eleve("J", "Fooz", 28));
-		elevelist.add(new Eleve("Cousin", "Tom", 28));
-		elevelist.add(new Eleve("J", "Fooz", 28));
-		elevelist.add(new Eleve("Cousin", "Tom", 28));
+		elevelist.add(new Eleve("Polak", "Chesco", 28));
+		elevelist.add(new Eleve("Ayle", "Adeem", 28));
+		elevelist.add(new Eleve("De Boedo", "Dimé", 28));
 		elevelist.add(new Eleve("J", "Fooz", 28));
 		elevelist.add(new Eleve("Cousin", "Tom", 28));
 		elevelist.add(new Eleve("J", "Fooz", 28));

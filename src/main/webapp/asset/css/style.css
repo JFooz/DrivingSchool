@@ -7,3 +7,20 @@ card {
 	margin : 25px;
 	
 }
+
+.menu-item {
+	display: flex;
+	
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color : red;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link {
+	color : red;
+}
+
+.btn-out {
+	float : right;
+}
