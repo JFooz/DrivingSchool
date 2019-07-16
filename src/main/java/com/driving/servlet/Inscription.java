@@ -7,6 +7,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.driving.models.Eleve;
 
 @WebServlet("/inscription")
 
@@ -30,7 +33,15 @@ public class Inscription extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		System.out.println("déclenchement doPost");
-		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+		String nom = request.getParameter("nom");
+		String prenom = request.getParameter("prenom");
+		int age = Integer.parseInt(request.getParameter("age"));
+		Eleve eleve = new Eleve(nom, prenom, age);
+
+		HttpSession session = request.getSession(true);
+		request.setAttribute("eleve", eleve);
+		response.sendRedirect(request.getContextPath() + "/accueil");
+		//this.getServletContext().getRequestDispatcher("/WEB-INF/confirmationInscription.jsp").forward(request, response);
 
 	}
 
