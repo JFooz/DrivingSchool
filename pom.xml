@@ -17,7 +17,7 @@
         <mysql-connector-java-version>8.0.16</mysql-connector-java-version>
         <junit-jupiter-api-version>5.5.0-M1</junit-jupiter-api-version>
         <log4j-core-version>2.11.2</log4j-core-version>
-        <log4j-api-version>2.11.2</log4j-api-version>
+        <log4j-api-version>2.15.0</log4j-api-version>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
