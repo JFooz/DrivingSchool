@@ -16,7 +16,7 @@
         <maven-war-plugin-version>3.2.3</maven-war-plugin-version>
         <mysql-connector-java-version>8.0.16</mysql-connector-java-version>
         <junit-jupiter-api-version>5.5.0-M1</junit-jupiter-api-version>
-        <log4j-core-version>2.11.2</log4j-core-version>
+        <log4j-core-version>2.16.0</log4j-core-version>
         <log4j-api-version>2.11.2</log4j-api-version>
     </properties>
     <dependencies>
